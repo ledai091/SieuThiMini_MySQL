@@ -1,4 +1,4 @@
-<img width="1215" alt="Step11_1" src="https://github.com/user-attachments/assets/d9a13d26-ece2-4465-af1f-7a6e05e528eb"><img width="1467" alt="Step10" src="https://github.com/user-attachments/assets/4ce6b142-5528-434b-8921-813a509181a8"># Hướng dẫn cài đặt cho User
+# Hướng dẫn cài đặt cho User
 ## Hướng dẫn cài đặt xampp để kết nối với cơ sở dữ liệu
 1. Truy cập https://www.apachefriends.org/download.html
 2. Chọn phiên bản phù hợp với hệ điều hành
