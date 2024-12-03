@@ -15,7 +15,7 @@
    <p align="center"><img width="245" alt="Step9" src="https://github.com/user-attachments/assets/b73fef8b-3223-4714-ad13-d6c372217a40"></p>
 10. Chọn import để nhập dữ liệu vào cơ sở dữ liệu  
     <p align="center"><img width="1467" alt="Step10" src="https://github.com/user-attachments/assets/c58cd308-ad78-4a82-b1b8-6bdbc4786afe"></p>
-11. Chọn Choose File và tìm đến `sieu_thi_mini.sql` thư mục `database` trong thư mục SieuThiMini_MySQL đã giải nén, sau đó nhấn vào Import  
+11. Chọn Choose File và tìm đến `sieu_thi_mini.sql` thư mục `database` trong thư mục SieuThiMini_MySQL đã giải nén (Xem hướng dẫn tải SieuThiMini_MySQL ở phần sau), sau đó nhấn vào Import  
     <p align="center"><img width="1215" alt="Step11_1" src="https://github.com/user-attachments/assets/f4a02554-e010-450f-b4b8-011eb856baae"></p>
 
 ## Hướng dẫn chạy chương trình
