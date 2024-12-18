@@ -84,6 +84,7 @@ namespace SieuThiMini.GUI
         {
             ThemNhanVien themNV = new ThemNhanVien();
             themNV.ShowDialog();
+            NhanVien_Load(null, null);
         }
 
         private void btn_SuaNV_Click(object sender, EventArgs e)
@@ -94,6 +95,7 @@ namespace SieuThiMini.GUI
             }
             else
             {
+                textBox_MaNV.Enabled = true;
                 textBox_TenNV.Enabled = true;
                 dateTimePicker_Birth.Enabled = true;
                 textBox_SDT.Enabled = true;
@@ -106,20 +108,20 @@ namespace SieuThiMini.GUI
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            string maNV = textBox_MaNV.Text;
+            int maNV = Convert.ToInt32(textBox_MaNV.Text);
             string tenNV = textBox_TenNV.Text;
             DateTime birth = DateTime.Parse(dateTimePicker_Birth.Text);
             string sdt = textBox_SDT.Text;
             string email = textBox_Email.Text;
-            string maTK = cb_TK.Text;
+            int maTK = Convert.ToInt32(cb_TK.Text);
 
-            if (maNV != "" && tenNV != "" && Convert.ToString(birth) != "" && sdt != "" && email != "")
+            if (maNV != null && tenNV != "" && Convert.ToString(birth) != "" && sdt != "" && email != "")
             {
-                NhanVienDTO nv = new NhanVienDTO(int.Parse(maNV), tenNV, birth, sdt, email, int.Parse(maTK));
+                NhanVienDTO nv = new NhanVienDTO(maNV, tenNV, birth, sdt, email, maTK);
                 NhanVienBLL nvBLL = new NhanVienBLL();
                 nvBLL.Update(nv);
                 cb_TK_Load();
-
+                textBox_MaNV.Enabled = false;
                 textBox_TenNV.Enabled = false;
                 cb_TK.Enabled = false;
                 dateTimePicker_Birth.Enabled = false;
@@ -133,10 +135,12 @@ namespace SieuThiMini.GUI
             {
                 MessageBox.Show("Thông tin không hợp lệ hãy kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            NhanVien_Load(null, null);
         }
 
         private void btn_Huy_Click(object sender, EventArgs e)
         {
+            textBox_MaNV.Enabled = false;
             textBox_TenNV.Enabled = false;
             cb_TK.Enabled = false;
             dateTimePicker_Birth.Enabled = false;
@@ -150,21 +154,17 @@ namespace SieuThiMini.GUI
         {
             string maNV = textBox_MaNV.Text;
             NhanVienBLL nvBLL = new NhanVienBLL();
-            if(cb_TK.Text == "0")
-            {
-                nvBLL.Delete(maNV);
-                MessageBox.Show("Xóa nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Nhân viên đang còn tài khoản sử dụng, hãy chuyển sang tài khoản mã = 0 nếu muốn xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            nvBLL.Delete(maNV);
+            MessageBox.Show("Xóa nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            NhanVien_Load(null, null);
+
         }
 
         private void btn_KhoiPhuc_Click(object sender, EventArgs e)
         {
             KhoiPhucNhanVien kp = new KhoiPhucNhanVien();
             kp.ShowDialog();
+            NhanVien_Load(null, null);
         }
 
         private void TimKiem(object sender, EventArgs e)

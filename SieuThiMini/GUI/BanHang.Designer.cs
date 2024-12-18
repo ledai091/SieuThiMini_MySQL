@@ -46,6 +46,11 @@
             this.btn_ThanhToan = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label_TT = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.TenNV = new System.Windows.Forms.Label();
+            this.btn_DangXuat = new System.Windows.Forms.Button();
+            this.SDT_NV = new System.Windows.Forms.Label();
+            this.Email_NV = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_HoaDon)).BeginInit();
             this.panel2.SuspendLayout();
@@ -56,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grid_SanPham)).BeginInit();
             this.panel3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -272,13 +278,78 @@
             this.label_TT.TabIndex = 0;
             this.label_TT.Text = "0";
             // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.Color.White;
+            this.groupBox5.Controls.Add(this.Email_NV);
+            this.groupBox5.Controls.Add(this.SDT_NV);
+            this.groupBox5.Controls.Add(this.TenNV);
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.Location = new System.Drawing.Point(2085, 12);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(501, 268);
+            this.groupBox5.TabIndex = 1;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Thông tin nhân viên";
+            // 
+            // TenNV
+            // 
+            this.TenNV.AutoSize = true;
+            this.TenNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TenNV.Location = new System.Drawing.Point(9, 45);
+            this.TenNV.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.TenNV.Name = "TenNV";
+            this.TenNV.Size = new System.Drawing.Size(40, 44);
+            this.TenNV.TabIndex = 0;
+            this.TenNV.Text = "0";
+            // 
+            // btn_DangXuat
+            // 
+            this.btn_DangXuat.AutoSize = true;
+            this.btn_DangXuat.BackColor = System.Drawing.Color.Navy;
+            this.btn_DangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_DangXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DangXuat.ForeColor = System.Drawing.Color.White;
+            this.btn_DangXuat.Location = new System.Drawing.Point(2325, 286);
+            this.btn_DangXuat.Name = "btn_DangXuat";
+            this.btn_DangXuat.Size = new System.Drawing.Size(261, 81);
+            this.btn_DangXuat.TabIndex = 1;
+            this.btn_DangXuat.Text = "Đăng xuất";
+            this.btn_DangXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_DangXuat.UseVisualStyleBackColor = false;
+            this.btn_DangXuat.Click += new System.EventHandler(this.btn_DangXuat_Click);
+            // 
+            // SDT_NV
+            // 
+            this.SDT_NV.AutoSize = true;
+            this.SDT_NV.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SDT_NV.Location = new System.Drawing.Point(9, 108);
+            this.SDT_NV.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.SDT_NV.Name = "SDT_NV";
+            this.SDT_NV.Size = new System.Drawing.Size(40, 44);
+            this.SDT_NV.TabIndex = 1;
+            this.SDT_NV.Text = "0";
+            // 
+            // Email_NV
+            // 
+            this.Email_NV.AutoSize = true;
+            this.Email_NV.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Email_NV.Location = new System.Drawing.Point(9, 177);
+            this.Email_NV.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Email_NV.Name = "Email_NV";
+            this.Email_NV.Size = new System.Drawing.Size(40, 44);
+            this.Email_NV.TabIndex = 2;
+            this.Email_NV.Text = "0";
+            // 
             // BanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(2082, 1209);
+            this.ClientSize = new System.Drawing.Size(2598, 1209);
+            this.Controls.Add(this.btn_DangXuat);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.grid_SanPham);
             this.Controls.Add(this.panel2);
@@ -301,7 +372,10 @@
             this.panel3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -325,5 +399,10 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btn_ThanhToan;
         private System.Windows.Forms.Label label_TT;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label TenNV;
+        private System.Windows.Forms.Button btn_DangXuat;
+        private System.Windows.Forms.Label Email_NV;
+        private System.Windows.Forms.Label SDT_NV;
     }
 }

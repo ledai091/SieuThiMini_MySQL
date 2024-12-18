@@ -53,7 +53,7 @@ namespace SieuThiMini.DAL
             Moketnoi();
             string query = "UPDATE loai_san_pham SET ";
             query += $"ten_loai = '{target.ten_loai}', ";
-            query += $"ma_nhacungcap = '{target.ma_ncc}' ";
+            query += $"ma_ncc = '{target.ma_ncc}' ";
             query += $"WHERE ma_loai = '{target.ma_loai}'";
             DataProvider.Instance.ExecuteNonQuery(query);
         }

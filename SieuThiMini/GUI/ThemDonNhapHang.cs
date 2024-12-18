@@ -132,6 +132,12 @@ namespace SieuThiMini.GUI
 
         private void btn_ThanhToan_Click(object sender, EventArgs e)
         {
+            if (grid_DonNhapHang == null)
+            {
+                MessageBox.Show("Bảng đơn nhập hàng chưa được khởi tạo.");
+                return;
+            }
+
             if (grid_DonNhapHang.Rows.Count == 0)
             {
                 MessageBox.Show("Chưa chọn sản phẩm");
@@ -142,6 +148,7 @@ namespace SieuThiMini.GUI
                 MessageBox.Show("Chưa chọn nhà cung cấp");
                 return;
             }
+
             DateTime ngayNhap = DateTime.Now;
             object selectedValue = cbo_NCC.SelectedItem;
             string nccSelected = null;
@@ -155,7 +162,7 @@ namespace SieuThiMini.GUI
             List<NhaCungCapDTO> nhaCungCapDTOs = bll.GetNCCByName(nccSelected);
             int maNCC = 0;
 
-            foreach(var ncc in nhaCungCapDTOs)
+            foreach (var ncc in nhaCungCapDTOs)
             {
                 maNCC = ncc.ma_ncc;
             }
@@ -167,14 +174,21 @@ namespace SieuThiMini.GUI
             int maDonNhap = donNhapHangDTO.ma_don_nh + 1;
 
             CTDonNhapHangBLL ctDonNhapHangBLL = new CTDonNhapHangBLL();
-            
+
             SanPhamBLL sanPhamBLL = new SanPhamBLL();
             DonNhapHangDTO donNhapHang = new DonNhapHangDTO(0, maNCC, maNV, ngayNhap, Convert.ToInt32(label_TT.Text), "1");
             donNhapHangBLL.Insert(donNhapHang);
 
-            foreach(DataGridViewRow dr in grid_DonNhapHang.Rows)
+            foreach (DataGridViewRow dr in grid_DonNhapHang.Rows)
             {
-                CTDonNhapHangDTO ctdnhDTO = new CTDonNhapHangDTO(maDonNhap, Convert.ToInt32(dr.Cells["ma_san_pham"].Value), dr.Cells["ten_san_pham"].Value.ToString(), Convert.ToInt32(dr.Cells["so_luong"].Value), Convert.ToInt32(dr.Cells["gia"].Value), Convert.ToInt32(dr.Cells["thanh_tien"].Value));
+                CTDonNhapHangDTO ctdnhDTO = new CTDonNhapHangDTO(
+                    maDonNhap,
+                    Convert.ToInt32(dr.Cells["ma_san_pham"].Value),
+                    dr.Cells["ten_san_pham"].Value.ToString(),
+                    Convert.ToInt32(dr.Cells["so_luong"].Value),
+                    Convert.ToInt32(dr.Cells["gia"].Value),
+                    Convert.ToInt32(dr.Cells["thanh_tien"].Value)
+                );
                 ctDonNhapHangBLL.Insert(ctdnhDTO);
                 SanPhamDTO sanPhamDTO = sanPhamBLL.getSPByMaSP(Convert.ToInt32(dr.Cells["ma_san_pham"].Value));
                 sanPhamBLL.UpdateSoLuong(Convert.ToInt32(dr.Cells["ma_san_pham"].Value), sanPhamDTO.so_luong + Convert.ToInt32(dr.Cells["so_luong"].Value));

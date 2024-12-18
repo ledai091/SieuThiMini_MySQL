@@ -20,8 +20,8 @@ namespace SieuThiMini.GUI
 
         private void LoginGUI_Load(object sender, EventArgs e)
         {
-            txtUsername.Text = "quanly";
-            txtPassword.Text = "123456";
+            txtUsername.Text = "";
+            txtPassword.Text = "";
         }
         private void btnSignIn_Click(object sender, EventArgs e)
         {
@@ -55,7 +55,13 @@ namespace SieuThiMini.GUI
             {
                 this.Hide();
                 NhanVienBLL nvBLL = new NhanVienBLL();
+               
                 List<NhanVienDTO> nvDTOList = nvBLL.GetNVByMaTK(tkDTO.ma_tai_khoan);
+                if (nvDTOList.Count == 0)
+                {
+                    MessageBox.Show("Không tìm thấy thông tin nhân viên cho tài khoản này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 NhanVienDTO nvDTO = nvDTOList[0];
                 var formBH = new BanHang(nvDTO.ma_nhan_vien);
                 formBH.FormClosed += (s, args) => this.Close();

@@ -69,13 +69,14 @@ namespace SieuThiMini.DAL
             Moketnoi();
             string ngay_sinh = target.ngay_sinh.ToString("yyyy-MM-dd");
 
-            string updateStr = "UPDATE nhan_vien SET";
-            updateStr += $"ten_nhan_vien = '{target.ten_nhan_vien}',";
-            updateStr += $"ngay_sinh = '{target.ngay_sinh}',";
-            updateStr += $"sdt = '{target.sdt}',";
-            updateStr += $"mail = '{target.mail}',";
-            updateStr += $"tai_khoan = '{target.tai_khoan}',";
+            string updateStr = "UPDATE nhan_vien SET ";
+            updateStr += $"ten_nhan_vien = '{target.ten_nhan_vien}', ";
+            updateStr += $"ngay_sinh = '{ngay_sinh}', ";
+            updateStr += $"sdt = '{target.sdt}', ";
+            updateStr += $"mail = '{target.mail}', ";
+            updateStr += $"tai_khoan = '{target.tai_khoan}' ";
             updateStr += $"WHERE ma_nhan_vien = '{target.ma_nhan_vien}'";
+
 
             DataProvider.Instance.ExecuteNonQuery(updateStr);
         }

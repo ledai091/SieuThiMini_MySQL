@@ -52,6 +52,12 @@ namespace SieuThiMini.GUI
             grid_HoaDon.Columns["so_luong"].HeaderText = "Số lượng";
             grid_HoaDon.Columns["gia_san_pham"].HeaderText = "Giá";
             grid_HoaDon.Columns["thanh_tien"].HeaderText = "Thành tiền";
+
+            NhanVienBLL nvBLL = new NhanVienBLL();
+            NhanVienDTO nv = nvBLL.GetNVByMaNV(maNV.ToString());
+            TenNV.Text = nv.ten_nhan_vien.ToString();
+            SDT_NV.Text = nv.sdt.ToString();
+            Email_NV.Text = (string)nv.mail;
         }
 
         public void update()
@@ -240,6 +246,14 @@ namespace SieuThiMini.GUI
             dsSp.RemoveAll(x => x.so_luong < 1);
             var filtered = dsSp.Where(x => x.ten_san_pham.ToLower().Contains(input.ToLower())).ToList();
             grid_SanPham.DataSource = filtered;
+        }
+
+        private void btn_DangXuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var formLogin = new LoginGUI();
+            formLogin.Closed += (s, args) => this.Close();
+            formLogin.Show();
         }
     }
 }
