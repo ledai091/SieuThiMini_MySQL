@@ -1,5 +1,5 @@
-# Hướng dẫn cài đặt cho User
-## Hướng dẫn cài đặt xampp để kết nối với cơ sở dữ liệu
+# **Hướng dẫn cài đặt cho User**
+## ***Hướng dẫn cài đặt xampp để kết nối với cơ sở dữ liệu***
 1. Truy cập https://www.apachefriends.org/download.html
 2. Chọn phiên bản phù hợp với hệ điều hành
 3. Tiến hành cài đặt
@@ -18,7 +18,7 @@
 11. Chọn Choose File và tìm đến `sieu_thi_mini.sql` thư mục `database` trong thư mục SieuThiMini_MySQL đã giải nén (Xem hướng dẫn tải SieuThiMini_MySQL ở phần sau), sau đó nhấn vào Import  
     <p align="center"><img width="1215" alt="Step11_1" src="https://github.com/user-attachments/assets/f4a02554-e010-450f-b4b8-011eb856baae"></p>
 
-## Hướng dẫn chạy chương trình
+## ***Hướng dẫn chạy chương trình***
 1. Truy cập https://github.com/ledai091/SieuThiMini_MySQL
 2. Chọn Code  
    <p align="center"><img width="942" alt="Step1" src="https://github.com/user-attachments/assets/c0af445d-f961-4811-8ceb-88084c19b601"></p>
@@ -26,3 +26,8 @@
    <p align="center"><img width="388" alt="Step2" src="https://github.com/user-attachments/assets/d390c155-ced0-4413-a139-5919fa63071f"></p>
 4. Giải nén file zip
 5. Chạy file SieuThiMini.exe
+
+## ***Hướng dẫn sử dụng***
+1. Xem file báo cáo
+2. Tài khoản mặc định là tài khoản quản lý: quanly (password: 123456)
+3. Tài khoản dành cho nhân viên bán hàng: nhanvien1 (password: 123456)
